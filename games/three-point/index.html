@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link type="text/css" rel="stylesheet" href="css/style.css"/>
+    <link type="text/css" rel="stylesheet" href="css/share.css"/>
+</head>
+<body>
+    <div id="game" class="bg">
+        <div id="time1" class="timeNum" style="left: 10px;background-position-x: -42px;"></div>
+        <div id="time2" class="timeNum" style="left: 39px;"></div>
+        <div id="time3" class="timeNum" style="left: 60px;"></div>
+        <div id="blue" class="blue"></div>
+        <div id="score1" class="scoreNum" style="left: 246px;">0</div>
+        <div id="score2" class="scoreNum" style="left: 274px;">0</div>
+        <div id="restCount">
+            <div>5</div>
+        </div>
+        <div id="net" class="net"></div>
+        <!--<img id="ball" class="rotating" src="img/ball.png">-->
+        <div id="ball" class="ball"></div>
+        <div id="retry"></div>
+        <div id="rank"></div>
+        <div id="shoot"></div>
+        <img id="ring" class="gutRing" src="img/gutRing.jpg" style="left: 0;">
+        <img id="slug" class="slug" src="img/slug.jpg">
+        <div class="conter" style="left: -4px;top: 171px;"></div>
+        <div class="conter" style="left: 21px;top: 271px;"></div>
+        <div class="conter" style="left: 128px;top: 312px;"></div>
+        <div class="conter" style="right: 14px;top: 265px;"></div>
+        <div class="conter" style="right: -5px;top: 170px;"></div>
+        <div id="start-panel" class="start-panel">
+            <div class="header">欢迎参加3G体育亚锦赛投篮之星大赛，赢得神投手称号！</div>
+            <div class="title">游戏规则：</div>
+            <div class="desc">点击开始游戏后，当黄色光标停在黄色区域点击Shoot完成投篮！</div>
+            <div class="desc">每轮比赛的难度逐渐增加，只有达到目标分数才能战胜对手闯关成功！</div>
+            <div class="footer">
+                <div id="start" class="btn">开始闯关</div>
+                <div class="btnSinaWeibo">分享到微博</div>
+                <div class="man"></div>
+            </div>
+        </div>
+        <div id="player-panel" class="bslogin">
+            <div class="player1">
+                <div class="text">你的首轮对手是孙悦！你必须获得至少20分才能击败他并且继续挑战！</div>
+                <div id="player-ok" class="btn">确定</div>
+                <div class="btnSinaWeibo">分享到微博</div>
+            </div>
+            
+        </div>
+        <div id="login" class="bslogin">
+            <div class="header">恭喜你获得了<b>20</b>分，通过了三分预赛，马上进入决赛争夺冠军！</div>
+            <div class="nick">获得称号：<span class="nickName">菜鸟射手</span></div>
+            <div class="desc">请留下你的昵称及手机号码参与抽奖！</div>
+            <div class="in-put">昵称<input id="txtNick" type="text" placeholder="请输入昵称,不超过6位"/></div>
+            <div class="in-put">手机<input id="txtPhone" type="text" pattern="\d{11}" placeholder="请输入11位手机号码"/></div>
+            <div class="footer">
+                <div id="ok" class="btn">确定</div>
+                <div class="btnSinaWeibo">分享到微博</div>
+            </div>
+        </div>
+        <div id="overRound" class="bslogin">
+            <div class="header">对不起！你的总分20分，闯关失败！</div>
+            <div class="nick">获得称号：<span class="nickName">菜鸟射手</span></div>
+            <div class="footer">
+                <div id="btnOr" class="btn">重新开始</div>
+                <div class="btnSinaWeibo">分享到微博</div>
+                </div>
+        </div>
+    </div>
+    <div id="rankBoard" class="rankBoard">
+        <div id="closeRank" class="title"></div>
+        <div id="list">
+            <!--<div class="item"><div>第1名　******　得分：27分</div></div>
+                <div class="item"><div>第2名　******　得分：27分</div></div>
+                <div class="item"><div>第3名　******　得分：27分</div></div>
+                <div class="item"><div>第4名　******　得分：27分</div></div>
+                <div class="item"><div>第5名　******　得分：27分</div></div>
+                <div class="item"><div>第6名　******　得分：27分</div></div>
+                <div class="item"><div>第7名　******　得分：27分</div></div>
+                <div class="item"><div>第8名　******　得分：27分</div></div>
+                <div class="item"><div>第9名　******　得分：27分</div></div>
+                <div class="item"><div>第10名　******　得分：27分</div></div>-->
+        </div>
+        <div class="btnBg">
+            <div id="prev">上一页</div>
+            <div id="next">下一页</div>
+        </div>
+    </div>
+    <div class="shareWidgetWrap" id="shareWidgetWrap" style="display:none;">
+        <div class="shareWidget sinaweibo" id="shareWidget">
+            <div class="mhd">
+                <i class="icon"></i><span class="title">新浪微博</span><i class="closeBtn"><i></i><i></i></i>
+            </div>
+            <div class="mbd">
+                <div class="step step1 type" style="display: none;">
+                    <ul>
+                        <li class="" title=""><i class="icon"></i>新浪微博</li>
+                    </ul>
+                </div>
+                <div class="step step2 login" style="display: block;">
+                    <form action="" onsubmit=" return false; ">
+                    <p>
+                        账号：<input class="txt username" type="text" name="username" id="shareWidgetUsername">
+                    </p>
+                    <p>
+                        密码：<input class="txt password" type="password" name="password" id="shareWidgetPassword">
+                    </p>
+                    <p class="loginingTxt">
+                        登录中...</p>
+                    <p class="fn">
+                        <button class="btn loginBtn" type="submit">
+                            登录</button></p>
+                    </form>
+                </div>
+                <div class="step step3 send">
+                    <form action="*" onsubmit=" return false; ">
+                    <p class="tipTxt">
+                        即将分享三分游戏，请添加对分享内容的评论</p>
+                    <p class="num">
+                        还可输入104个字</p>
+                    <p>
+                        <textarea id="shareContent" rows="" cols=""></textarea></p>
+                    <p class="fn">
+                        <button class="btn shareBtn" type="submit">
+                            分享</button></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/share.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+    <script type="text/javascript" src="js/mock-min.js"></script>
+</body>
+</html>

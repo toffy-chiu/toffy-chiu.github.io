@@ -1,0 +1,395 @@
+﻿/** * Author/Modifier: 梁镇麟 * Date: 2013-1-28 **/
+*, ::after, ::before{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -moz-tap-highlight-color:rgba(0,0,0,0);
+    -o-tap-highlight-color:rgba(0,0,0,0);
+    tap-highlight-color:rgba(0,0,0,0);
+    -webkit-text-size-adjust:none;
+    -moz-text-size-adjust:none;
+    -o-text-size-adjust:none;
+    text-size-adjust:none;
+}
+body, h1, h2, h3, h4, h5, h6, p, div, ul, li, dl, dt, dd, h1{margin:0; padding: 0;}
+
+html{background:#000;font:12px/1.5 'microsoft yahei';}
+input,textarea{-webkit-appearance:none;font-size:12px;}
+li{list-style:none;}
+img{border:none; margin:0; padding:0;}
+a{text-decoration:none;}
+
+/* page start */
+.bg
+{
+	background: url(../img/bg.jpg);
+	height: 471px;
+	width: 320px;
+	margin:0 auto;
+	position: relative;
+	overflow: hidden;
+}
+.scoreNum
+{
+	position: absolute;
+	font-size: 28px;
+	color: #FFF;
+	top: 72px;
+	text-align: center;
+	width: 28px;
+	height: 36px;
+	line-height: 36px;
+}
+.timeNum {
+	background-image: url(../img/number.png);
+	position: absolute;
+	height: 30px;
+	width: 21px;
+	top: 77px;
+}
+.net
+{
+	background-image: url(../img/net.png);
+	background-position: 0 0;
+	position: absolute;
+	left: 132px;
+	top: 103px;
+	width: 50px;
+	height: 53px;
+	overflow: hidden;
+	z-index: 10;
+}
+#ball
+{
+	position: absolute;
+	z-index: 11;
+	width: 35px;
+	height: 35px;
+	left: 10px;
+	top: 155px;
+}
+.ball {
+	background: url(../img/ball.png) no-repeat;
+}
+.ball5 {
+	background: url(../img/ball5.png) no-repeat;
+	border-radius: 19px;
+	box-shadow: 0 0 5px white, 0 0 10px white,0 0 20px white,0 0 30px white,0 0 40px white;
+}
+#restCount
+{
+	position: absolute;
+	z-index: 5;
+	background: url(../img/restQuote.png);
+	width: 32px;
+	height: 27px;
+	top: 180px;
+	left: 30px;
+}
+#restCount div
+{
+	width: 32px;
+	text-align: center;
+	font-size: 18px;
+	position: absolute;
+	bottom: 3px;
+	line-height: 1;
+}
+.gutRing
+{
+	position: absolute;
+	z-index: 5;
+	top: 348px;
+}
+.slug
+{
+	position: absolute;
+	z-index: 2;
+	top: 351px;
+}
+#shoot
+{
+	position: absolute;
+	left: 82px;
+	bottom: 8px;
+	width: 157px;
+	height: 48px;
+	cursor: pointer;
+	display: none;
+	border-radius: 6px;
+	
+}
+#shoot:active 
+{
+	background: rgba(255, 255, 255, .5);
+	box-shadow: 0 0 5px white, 0 0 10px white,0 0 20px white,0 0 30px white,0 0 40px white;
+}
+#retry
+{
+	position: absolute;
+	width: 75px;
+	height: 30px;
+	left: 7px;
+	top: 118px;
+    cursor: pointer;
+}
+#rank {
+	position: absolute;
+	width: 75px;
+	height: 30px;
+	right: 8px;
+	top: 118px;
+    cursor: pointer;
+}
+.anticlockwise {
+	-moz-transition: -moz-transform 2.5s ease-out;
+	-webkit-transition: -webkit-transform 2.5s ease-out;
+	-o-transition:-o-transform 2.5s ease-out;
+	transition: transform 2.5s ease-out;
+	-moz-transform: rotate(-900deg);
+	-webkit-transform: rotate(-900deg);
+	-o-transform: rotate(-900deg);
+	-ms-transform: rotate(-900deg);
+	transform: rotate(-900deg);
+}
+.clockwise {
+	-moz-transition: -moz-transform 2.5s ease-out;
+	-webkit-transition: -webkit-transform 2.5s ease-out;
+	-o-transition:-o-transform 2.5s ease-out;
+	transition: transform 2.5s ease-out;
+	-moz-transform: rotate(900deg);
+	-webkit-transform: rotate(900deg);
+	-o-transform: rotate(900deg);
+	-ms-transform: rotate(900deg);
+	transform: rotate(900deg);
+}
+.shootDown 
+{
+	-moz-transition: -moz-transform 2.5s ease-out,top 1s ease-out;
+	-webkit-transition: -webkit-transform 2.5s ease-out,top 1s ease-out;
+	-o-transition:-o-transform 2.5s ease-out,top 1s ease-out;
+	transition: transform 2.5s ease-out,top 1s ease-out;
+}
+.conter {
+	background: url(../img/conter.png) no-repeat;
+	width: 62px;
+	height: 13px;
+	position: absolute;
+	z-index: 12;
+}
+.blue {
+	background: url(../img/blue.png) no-repeat;
+	position: absolute;
+	width: 119px;
+	height: 77px;
+	left: 97px;
+	top: 40px;
+	display: none;
+}
+.rankBoard {
+	background: black;
+	width: 320px;
+	margin:0 auto;
+	position: relative;
+	overflow: hidden;
+	color: #390909;
+	font-size: small;
+	font-weight: bolder;
+	display: none;
+}
+.rankBoard .title {
+	background: url(../img/rankTitle.jpg) 50% no-repeat;
+	height: 49px;
+	width: 100%;
+    cursor: pointer;
+}
+.rankBoard .item {
+	background: url(../img/rankBg.png) no-repeat;
+	height: 35px;
+	width: 100%;
+	box-shadow: 0 -6px 20px black;
+}
+.rankBoard span {
+	position: absolute;
+	right: 5px;
+	color: gold;
+}
+.rankBoard .item>div {
+	width: 100%;
+	line-height: 35px;
+	text-indent: 10px;
+	background: rgba(255, 255, 255, 0.2);
+    text-shadow: 0 0 3px white;
+}
+.rankBoard .btnBg {
+	width: 220px;
+	height: 35px;
+	background: url(../img/rankBg.png) no-repeat;
+	margin: 10px auto;
+}
+.rankBoard .btnBg>div {
+	float: left;
+	width: 50%;
+	height: 100%;
+	line-height: 35px;
+	text-align: center;
+	cursor: pointer;
+    text-shadow: 0 0 3px white;
+}
+.start-panel {
+	width: 290px;
+	left: 15px;
+	top: 50px;
+    background: #3683DC;
+	z-index: 100;
+	position: absolute;
+	border-radius: 5px;
+}
+.start-panel .header{
+	color: white;
+	font-size: large;
+	padding: 15px;
+	font-weight: bold;
+}
+.start-panel .title {
+	background: #99b9e5;
+	font-weight: bold;
+	text-indent: 10px;
+	font-size: medium;
+}
+.start-panel .desc {
+	background: #203e66;
+	color: white;
+	text-indent: 10px;
+	font-style: italic;
+	padding: 0 5px;
+	font-size: 14px;
+}
+.start-panel .footer {
+	height: 60px;
+	position: relative;
+}
+.start-panel .btn {
+	background: #367dd3;
+	border: 2px solid #85bdde;
+	font-size: x-large;
+	position: absolute;
+	border-radius: 5px;
+	left: 10px;
+	top: 10px;
+	cursor: pointer;
+}
+.start-panel .man {
+	background: url(../img/man.png) no-repeat;
+	width: 43px;
+	height: 127px;
+	position: absolute;
+	right: 5px;
+	top: -150px;
+	opacity: 0.6;
+}
+.bslogin {
+	width: 290px;
+	left: 15px;
+	top: 50px;
+	background: #3683DC;
+	z-index: 100;
+	position: absolute;
+	border-radius: 5px;
+	font-size: medium;
+	display: none;
+}
+.bslogin .header{
+	color: white;
+	padding: 15px 15px 0 15px;
+}
+.bslogin .nick {
+	color: #990000;
+	font-weight: bolder;
+	text-align: right;
+	padding-right: 30px;
+}
+.bslogin .desc {
+	background: #99b9e5;
+	text-align: center;
+}
+.bslogin .in-put {
+	color: white;
+	font-weight: bold;
+	margin: 10px 20px;
+}
+.bslogin input {
+	border: 1px solid white;
+	border-radius: 5px;
+	background: #2a5994;
+	width: 170px;
+	height: 25px;
+	margin-left: 25px;
+	color: white;
+	font-size: 15px;
+	text-indent: 3px;
+}
+.bslogin .footer {
+	height: 60px;
+	position: relative;
+}
+.bslogin .btn {
+	background: #367dd3;
+	border: 2px solid #85bdde;
+	font-size: x-large;
+	position: absolute;
+	border-radius: 5px;
+	left: 10px;
+	top: 10px;
+	cursor: pointer;
+	padding: 0 20px;
+}
+.btnSinaWeibo {
+	position: absolute;
+	right: 10px;
+	color: #A00;
+	font-weight: bold;
+	font-size: 16px;
+	bottom: 20px;
+	/*background: url(http://score.3g.cn/xuanscore/Images/sinaweibo.png) no-repeat;
+	background-size: 30%;
+	height: 35px;
+	line-height: 45px;
+	text-indent: 40px;*/
+}
+#player-panel>div {
+    margin: 1px;
+    border: 1px solid #b5c8dd;
+    height: 270px;
+    position: relative;
+    border-radius: 5px;
+}
+#player-panel p {
+    color: red;
+    font-size: 13px;
+}
+#player-panel .btn {
+    top: 220px;
+    left: 60px;
+}
+#player-panel .text {
+    color: white;
+    width: 100px;
+    position: absolute;
+    right: 2px;
+    top: 5px;
+    font-size: 15px;
+}
+.player1 {
+    background: #3683DC url(../img/sunyue.png) -20px -10px no-repeat;
+}
+.player2 {
+    background: #3683DC url(../img/wangshipeng.png) -100px -100px no-repeat;
+}
+.player3 {
+    background: #3683DC url(../img/yijianlian.png) -10px -20px no-repeat;
+}
+.player4 {
+    background: #3683DC url(../img/wangzhizhi.png) -10px -20px no-repeat;
+}
+.player5 {
+    background: #3683DC url(../img/zhufangyu.png) -10px -20px no-repeat;
+}
