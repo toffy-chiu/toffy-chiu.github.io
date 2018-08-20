@@ -1,0 +1,88 @@
+@CHARSET "UTF-8";
+body,div,span,ul,ol,li,p,a{
+	margin:0;
+	padding:0;
+}
+ul{
+	list-style:none;
+}
+.chongyang{
+	width:320px;
+	height:480px;
+	margin:0 auto;
+	background:#FDFBEC url(../img/bg.jpg) no-repeat;
+	position:relative;
+	overflow:hidden;
+}
+.cy-group{
+	position:absolute;
+	bottom:0;
+	left:0;
+	background:url(../img/group.png) no-repeat;
+	width:320px;
+	height:63px;
+	-webkit-animation:group .5s ease-in 0s infinite;
+}
+.climber{
+	-webkit-transition:all 10s linear;
+	position:absolute;
+	width:80px;
+	bottom:-20px;
+}
+.climber img{	
+	margin-top:-10px;
+}
+.cy-tip{
+	width:97px;
+	height:77px;
+	background:url(../img/tip.png) no-repeat;
+	text-align:center;
+	padding-top:5px;
+	font-weight:bold;
+	font-size:.9em;
+	color:#6c5d51;
+}
+.cy-tip p{
+	line-height:1.5em;
+}
+.cy-username{
+	white-space: nowrap;
+	overflow: hidden;
+	width: 95%;
+}
+.climb1{
+	bottom:50px;
+}
+.climb2{
+	bottom:130px;
+}
+.climb3{
+	bottom:60px;
+}
+.fall{
+	-webkit-transition:all .3s ease-in;
+}
+.cloud1{
+	position:absolute;
+	bottom:45px;
+	left:-90px;
+	-webkit-animation:cloud 20s linear 10s infinite;
+}
+.cloud2{
+	position:absolute;
+	bottom:30px;
+	-webkit-animation:cloud 20s linear 0s infinite;
+}
+@-webkit-keyframes cloud{
+	from{left:-90px;}
+	to{left:320px;}
+}
+@-webkit-keyframes group{
+	from{bottom:0;}
+	to{bottom:-10px;}
+}
+.cy-otherRank{
+	width:320px;
+	margin:0 auto;
+	font-size:.9em;
+}
