@@ -1,0 +1,52 @@
+<!DOCTYPE html><html><head><title>设置</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"><!--<link href="css/nprogress.css" rel="stylesheet">--><style>#initLoading{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 999;
+            text-align: center;
+            -webkit-transition: all .5s;
+            -moz-transition: all .5s;
+            transition: all .5s;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        #initLoading.hide{
+             visibility: hidden;
+             opacity: 0;
+         }
+
+        .loader-x {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            color: inherit;
+            vertical-align: middle;
+            border-top: .2em solid currentcolor;
+            border-right: .2em solid transparent;
+            -webkit-animation: loader-x 1s linear infinite;
+            animation: loader-x 1s linear infinite;
+            border-radius: 100%;
+            position: relative;
+        }
+
+        @-webkit-keyframes loader-x {
+            to {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes loader-x {
+            to {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }</style><link rel="shortcut icon" href="favicon.png"></head><body><div id="initLoading"><div style="text-align: center;margin-top:40vh;font-size: 16px;"><span class="loader-x"></span> 资源加载中...</div></div><div id="container" class="full-height"></div><!--<script src="js/jquery.min.js" type="text/javascript" defer></script>--><script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script><script>if ('addEventListener' in document) {
+        document.addEventListener('DOMContentLoaded', function() {
+            FastClick.attach(document.body);
+        }, false);
+    }</script><script src="vendors_index_setting_type.chunk.59f37c7a.js"></script><script src="setting.59f37c7a.js"></script></body></html>
