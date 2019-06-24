@@ -7,27 +7,12 @@
 			width:100%;
 			margin-bottom:8px;
 		}
-		.bottomBar{
-			position:fixed;
-			bottom:0;
-			left:0;
-			right:0;
-			background:white;
-			height:40px;
-			line-height:40px;
-			text-align:center;
-		}
-		.bottomBarPlaceholder{
-			height:40px;
-		}
+		
 	</style>
 </head>
 	<body style="display:flex;flex-direction:column;">
 		<h3 style="text-align:center">1-6 2015年5月是好的入场时机吗？</h3>
-		<div class="bottomBar">
-			<audio controls src="1-6 2015年5月是好的入场时机吗？.m4a"/>
-		</div>
-		<div style="flex:1;overflow:auto;">
+		<div id="ppt" style="flex:1;overflow:auto;display:none;">
 			<img src="1.jpg"/>
 			<img src="2.jpg"/>
 			<img src="3.jpg"/>
@@ -39,6 +24,13 @@
 			<img src="9.jpg"/>
 			<img src="10.jpg"/>
 		</div>
-		<div class="bottomBarPlaceholder"></div>
+		<div style="text-align:center">
+			<audio controls src="1-6 2015年5月是好的入场时机吗？.m4a"/>
+		</div>
+		<script>
+			setTimeout(function(){
+				document.getElementById('ppt').style.display='block';
+			}, 1000);
+		</script>
 	</body>	
 </html>
