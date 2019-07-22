@@ -1,6 +1,6 @@
 var fs = require('fs');
 var path = require('path');
-var dir=__dirname + '/jijin/';
+var dir=__dirname + '/gupiao/';
 
 //批量移除MP3名称时间后缀
 fs.readdir(dir, function (err, files) {
