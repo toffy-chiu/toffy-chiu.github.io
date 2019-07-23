@@ -1,6 +1,6 @@
 var fs = require('fs');
 var path = require('path');
-var dir=__dirname + '/jijin';
+var dir=__dirname + '/gupiao';
 
 var template=fs.readFileSync('chapter-template.html', {flag: 'r+', encoding: 'utf8'});
 
@@ -35,4 +35,8 @@ function readdirSync(dirPath) {
 	});
 }
 
-readdirSync(dir);
+//readdirSync(dir);
+
+for(var i=8;i<=14;i++){
+	readdirSync(dir+path.sep+i);
+}
