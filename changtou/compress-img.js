@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var images = require('images');
-var dir=__dirname + '/gupiao';
+var dir=__dirname + '/baoxian';
 
 var count=0;
 

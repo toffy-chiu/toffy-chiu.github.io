@@ -1,23 +1,25 @@
 var fs = require('fs');
 var path = require('path');
-var dir=__dirname + '/gupiao';
+var dir=__dirname + '/baoxian';
 
-const title='股票初级训练营';
+const title='保险实战课';
+const MAX_CHAPTER=14;
 var chapterList=[];
 const courseNameMap={
-	1:'迈出股票投资第一步：找准入市时机',
-	2:'建立你的投资组合：合理规避风险',
-	3:'“好公司”投资法：初筛白马股',
-	4:'“好公司”投资法：剔除周期股',
-	5:'“好公司”投资法：剔除基本面转坏的股票',
-	6:'财务三表分析(1) 如何识别收入美化',
-	7:'财务三表分析(2) 如何识别资产美化',
-	8:'财务三表分析(3) 自由现金流的重要性',
-	9:'实操：构建你的白马组合',
-	10:'“捡烟蒂”投资法：便宜组合',
-	11:'“捡烟蒂”投资法：便宜组合实操构建',
-	12:'实战：第一次“下注”买股票',
-	13:'股海沉浮·锦囊妙计',
+	1:'你需要买保险吗？',
+	2:'社保和商业保险，怎么取舍？',
+	3:'你一定要懂的保险基础知识',
+	4:'直面死亡，我们需要寿险（上）',
+	5:'直面死亡，我们需要寿险（下）',
+	6:'实操：寿险产品分析及推荐',
+	7:'关于重疾险，你必须知道的几件事！',
+	8:'实操：重疾险产品分析及推荐',
+	9:'除了重疾险，你还该有医疗险（附实操）',
+	10:'意外险，杠杆率最高的保险',
+	11:'实操：意外险产品分析及推荐',
+	12:'如何规划一个靠谱的人身保险方案？',
+	13:'实操：保险规划方案分析',
+	14:'买保险，这些知识不可不知！',
 };
 
 function readdirSync(dirPath) {
@@ -45,7 +47,7 @@ function readdirSync(dirPath) {
 
 //获取所有小节列表
 //readdirSync(dir);
-for(var i=1;i<=13;i++){
+for(var i=1;i<=MAX_CHAPTER;i++){
 	readdirSync(dir+path.sep+i);
 }
 
@@ -63,7 +65,7 @@ chapterList.forEach(function (o, i) {
         if(i>0){
             content+='</ul>';
         }
-        content+='<h3>第'+o.course+'天 '+(courseNameMap[o.course]||'')+'</h3>';
+        content+='<h3>第'+o.course+'课 '+(courseNameMap[o.course]||'')+'</h3>';
         content+='<ul>';
         tmpCourse=o.course;
     }

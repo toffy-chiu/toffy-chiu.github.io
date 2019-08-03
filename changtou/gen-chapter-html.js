@@ -1,6 +1,6 @@
 var fs = require('fs');
 var path = require('path');
-var dir=__dirname + '/gupiao';
+var dir=__dirname + '/baoxian';
 
 var template=fs.readFileSync('chapter-template.html', {flag: 'r+', encoding: 'utf8'});
 
