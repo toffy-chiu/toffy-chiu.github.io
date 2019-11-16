@@ -1,6 +1,6 @@
 var fs = require('fs');
 var path = require('path');
-var dir=__dirname + '/baoxian';
+var dir=__dirname + '/gujin';
 
 var template=fs.readFileSync('chapter-template.html', {flag: 'r+', encoding: 'utf8'});
 
@@ -37,6 +37,6 @@ function readdirSync(dirPath) {
 
 //readdirSync(dir);
 
-for(var i=8;i<=14;i++){
+for(var i=1;i<=14;i++){
 	readdirSync(dir+path.sep+i);
 }

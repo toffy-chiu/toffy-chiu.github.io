@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var images = require('images');
-var dir=__dirname + '/baoxian';
+var dir=__dirname + '/gujin';
 
 var count=0;
 
@@ -31,7 +31,7 @@ function readdirSync(dirPath) {
 	}
 }
 
-for(var i=8;i<=14;i++){
+for(var i=1;i<=14;i++){
 	readdirSync(dir+path.sep+i);
 }
 

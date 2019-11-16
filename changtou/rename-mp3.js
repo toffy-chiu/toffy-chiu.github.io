@@ -1,6 +1,6 @@
 var fs = require('fs');
 var path = require('path');
-var dir=__dirname + '/baoxian/';
+var dir=__dirname + '/gujin/';
 
 //同级目录下批量移除MP3名称时间后缀
 /*
