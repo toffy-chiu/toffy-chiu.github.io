@@ -1,8 +1,10 @@
 var fs = require('fs');
 var path = require('path');
-var dir=__dirname + '/gujin';
+var dir=__dirname + '/baoxian';
 
 var template=fs.readFileSync('chapter-template.html', {flag: 'r+', encoding: 'utf8'});
+
+const baseUrl = 'https://656e-env-note-1300965852.tcb.qcloud.la/changtou/baoxian/';
 
 function readdirSync(dirPath) {
 	const index=dirPath.lastIndexOf(path.sep);
@@ -19,11 +21,12 @@ function readdirSync(dirPath) {
 			//找到包含MP3的文件夹开始处理
 			const pictureCount=fs.readdirSync(dirPath+path.sep+'origin').length;
 			const name=path.basename(file, '.mp3');
+			const chapterNo = name.split(' ')[0];
 			var imgHtml='';
 			for(var i=1;i<=pictureCount;i++){
-				imgHtml+='<img src="'+i+'.jpg"/>';
+				imgHtml+='<img src="'+baseUrl+chapterNo+'_'+i+'.jpg"/>';
 			}
-			const content=template.replace('${title}', name).replace('${imgs}', imgHtml).replace('${mp3}', name);
+			const content=template.replace('${title}', name).replace('${imgs}', imgHtml).replace('${mp3}', baseUrl+name);
 			fs.writeFile(path.join(dirPath, 'index.html'), content, {flag: 'w',encoding:'utf-8'}, function (err) {
 				if(err) {
 					console.error(err);
